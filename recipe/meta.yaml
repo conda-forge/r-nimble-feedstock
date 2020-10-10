@@ -1,4 +1,4 @@
-{% set version = '0.9.1' %}
+{% set version = "0.10.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nimble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nimble/nimble_{{ version }}.tar.gz
-  sha256: ad5e8a171193cb0172e68bf61c4f94432c45c131a150101ad1c5c7318c335757
+  sha256: 9cd418450130d432d49b9dbe9fe98d9a089644f27ed587b8b242ee28cad56daa
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -62,24 +62,15 @@ test:
 about:
   home: https://r-nimble.org, https://github.com/nimble-dev/nimble
   license: BSD-3-Clause AND GPL-2.0-or-later
-  summary: 'A system for writing hierarchical statistical models largely compatible with ''BUGS''
-    and ''JAGS'', writing nimbleFunctions to operate models and do basic R-style math,
-    and compiling both models and nimbleFunctions via custom- generated C++. ''NIMBLE''
-    includes default methods for MCMC, particle filtering, Monte Carlo Expectation Maximization,
-    and some other tools. The nimbleFunction system makes it easy to do things like
-    implement new MCMC samplers from R, customize the assignment of samplers to different
-    parts of a model from R, and compile the new samplers automatically via C++ alongside
-    the samplers ''NIMBLE'' provides. ''NIMBLE'' extends the ''BUGS''/''JAGS'' language
-    by making it extensible: New distributions and functions can be added, including
-    as calls to external compiled code. Although most people think of MCMC as the main
-    goal of the ''BUGS''/''JAGS'' language for writing models, one can use ''NIMBLE''
-    for writing arbitrary other kinds of model-generic algorithms as well. A full User
-    Manual is available at <https://r-nimble.org>.'
+  summary: "A system for writing hierarchical statistical models largely compatible with 'BUGS' and 'JAGS', writing nimbleFunctions to operate models and do basic R-style math, and compiling both models and nimbleFunctions via custom- generated C++. 'NIMBLE' includes default methods for MCMC, particle filtering, Monte Carlo\
+    \ Expectation Maximization, and some other tools. The nimbleFunction system makes it easy to do things like implement new MCMC samplers from R, customize the assignment of samplers to different parts of a model from R, and compile the new samplers automatically via C++ alongside the samplers 'NIMBLE' provides. 'NIMBLE'\
+    \ extends the 'BUGS'/'JAGS' language by making it extensible: New distributions and functions can be added, including as calls to external compiled code. Although most people think of MCMC as the main goal of the 'BUGS'/'JAGS' language for writing models, one can use 'NIMBLE' for writing arbitrary other kinds of model-generic\
+    \ algorithms as well. A full User Manual is available at <https://r-nimble.org>."
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause
     - LICENSE
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
