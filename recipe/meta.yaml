@@ -39,18 +39,21 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-r6
     - r-coda
     - r-igraph
-    - libopenblas
+    - r-numderiv
+    - r-pracma
+    - r-r6
     - liblapack
     - libblas
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-r6
     - r-coda
     - r-igraph
+    - r-numderiv
+    - r-pracma
+    - r-r6
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}make
@@ -73,6 +76,7 @@ about:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause
     - LICENSE
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
