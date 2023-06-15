@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nimble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nimble/nimble_{{ version }}.tar.gz
-  sha256: dacec9e1825bd3a09ea708ccc600aaacf757104f3dca5510b9604023a3e48010
+  sha256: 107fe78daf4bf98da06779ce039d376eccc3e35767a00d17410210bd3dd45238
 
 build:
   merge_build_host: true  # [win]
