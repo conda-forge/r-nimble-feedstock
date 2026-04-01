@@ -1,4 +1,4 @@
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nimble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nimble/nimble_{{ version }}.tar.gz
-  sha256: 9e512635fe38737dd31db0202df4929cec9c19c5973ff7971adaf0338babeb4e
+  sha256: 4e04f4fe90a2afa91a7d5476e499778e9715112e481d5e2fcd612052f0afd506
 
 build:
   number: 0
