@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -39,20 +43,20 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-r6
     - r-coda
     - r-igraph
     - r-numderiv
     - r-pracma
-    - r-r6
     - liblapack
     - libblas
   run:
     - r-base
+    - r-r6
     - r-coda
     - r-igraph
     - r-numderiv
     - r-pracma
-    - r-r6
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}make
