@@ -1,4 +1,4 @@
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nimble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nimble/nimble_{{ version }}.tar.gz
-  sha256: 4e04f4fe90a2afa91a7d5476e499778e9715112e481d5e2fcd612052f0afd506
+  sha256: 4fc6001112535c6be6b77e45e67d38a4f3057b557eff375c5ff0ccc5f52d82bc
 
 build:
   number: 0
@@ -68,7 +68,8 @@ test:
     - "\"%R%\" -e \"library('nimble'); code <- nimbleCode({ x ~ dnorm(0, 1) }); Rmodel <- nimbleModel(code); Cmodel <- compileNimble(Rmodel)\""  # [win]
 
 about:
-  home: https://r-nimble.org, https://github.com/nimble-dev/nimble
+  home: https://r-nimble.org
+  dev_url: https://github.com/nimble-dev/nimble
   license: BSD-3-Clause AND GPL-2.0-or-later
   summary: "A system for writing hierarchical statistical models largely compatible with 'BUGS' and 'JAGS', writing nimbleFunctions to operate models and do basic R-style math, and compiling both models and nimbleFunctions via custom- generated C++. 'NIMBLE' includes default methods for MCMC, particle filtering, Monte Carlo
     Expectation Maximization, and some other tools. The nimbleFunction system makes it easy to do things like implement new MCMC samplers from R, customize the assignment of samplers to different parts of a model from R, and compile the new samplers automatically via C++ alongside the samplers 'NIMBLE' provides. 'NIMBLE'

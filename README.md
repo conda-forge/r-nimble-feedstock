@@ -7,26 +7,37 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-nimble-feedst
 About r-nimble
 --------------
 
-Home: https://r-nimble.org, https://github.com/nimble-dev/nimble
+Home: https://r-nimble.org
 
 Package license: BSD-3-Clause AND GPL-2.0-or-later
 
 Summary: A system for writing hierarchical statistical models largely compatible with 'BUGS' and 'JAGS', writing nimbleFunctions to operate models and do basic R-style math, and compiling both models and nimbleFunctions via custom- generated C++. 'NIMBLE' includes default methods for MCMC, particle filtering, Monte Carlo Expectation Maximization, and some other tools. The nimbleFunction system makes it easy to do things like implement new MCMC samplers from R, customize the assignment of samplers to different parts of a model from R, and compile the new samplers automatically via C++ alongside the samplers 'NIMBLE' provides. 'NIMBLE' extends the 'BUGS'/'JAGS' language by making it extensible: New distributions and functions can be added, including as calls to external compiled code. Although most people think of MCMC as the main goal of the 'BUGS'/'JAGS' language for writing models, one can use 'NIMBLE' for writing arbitrary other kinds of model-generic algorithms as well. A full User Manual is available at <https://r-nimble.org>.
+
+Development: https://github.com/nimble-dev/nimble
 
 About r-nimble
 --------------
 
-Home: https://r-nimble.org, https://github.com/nimble-dev/nimble
+Home: https://r-nimble.org
 
 Package license: BSD-3-Clause AND GPL-2.0-or-later
 
 Summary: A system for writing hierarchical statistical models largely compatible with 'BUGS' and 'JAGS', writing nimbleFunctions to operate models and do basic R-style math, and compiling both models and nimbleFunctions via custom- generated C++. 'NIMBLE' includes default methods for MCMC, particle filtering, Monte Carlo Expectation Maximization, and some other tools. The nimbleFunction system makes it easy to do things like implement new MCMC samplers from R, customize the assignment of samplers to different parts of a model from R, and compile the new samplers automatically via C++ alongside the samplers 'NIMBLE' provides. 'NIMBLE' extends the 'BUGS'/'JAGS' language by making it extensible: New distributions and functions can be added, including as calls to external compiled code. Although most people think of MCMC as the main goal of the 'BUGS'/'JAGS' language for writing models, one can use 'NIMBLE' for writing arbitrary other kinds of model-generic algorithms as well. A full User Manual is available at <https://r-nimble.org>.
+
+Development: https://github.com/nimble-dev/nimble
 
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/r-nimble-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/r-nimble-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -40,20 +51,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_r_base4.4</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-nimble-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.4" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_r_base4.5</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-nimble-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.5" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_r_base4.4</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
@@ -65,20 +62,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-nimble-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.5" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_r_base4.4</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-nimble-feedstock?branchName=main&jobName=win&configuration=win%20win_64_r_base4.4" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_r_base4.5</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10268&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-nimble-feedstock?branchName=main&jobName=win&configuration=win%20win_64_r_base4.5" alt="variant">
                 </a>
               </td>
             </tr>
@@ -106,31 +89,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-nimble` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install r-nimble
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install r-nimble
 ```
 
-It is possible to list all of the versions of `r-nimble` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add r-nimble
+# for installing globally
+pixi global install r-nimble
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `r-nimble` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search r-nimble --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search r-nimble --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search r-nimble --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -142,6 +167,8 @@ mamba repoquery whoneeds r-nimble --channel conda-forge
 # List dependencies of `r-nimble`:
 mamba repoquery depends r-nimble --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
